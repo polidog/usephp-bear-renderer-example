@@ -40,7 +40,7 @@ final class AppModule extends AbstractAppModule
         $this->bind(UsePHP::class)->toInstance($usePhp);
         $this->bind(UsePhpRenderer::class)->toInstance($renderer);
         $this->bind(UsePhpActionResponder::class)->toInstance(
-            new UsePhpActionResponder($renderer, $usePhp)
+            new UsePhpActionResponder($renderer)
         );
     }
 }

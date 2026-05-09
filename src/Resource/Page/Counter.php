@@ -41,7 +41,6 @@ final class Counter extends ResourceObject
     public function onPost(): static
     {
         $post = $_POST;
-        $server = $_SERVER;
 
         // Recover the count this action will produce so we can precompute
         // next/prev/reset for the *post-action* render. The responder will
@@ -51,7 +50,7 @@ final class Counter extends ResourceObject
         $props = $this->buildProps($newCount);
         $this->body = $props;
 
-        $partial = $this->responder->handle($this, $post, $server, $props);
+        $partial = $this->responder->handle($this, $post, $props);
         if ($partial !== null) {
             $this->view = $partial;
         }

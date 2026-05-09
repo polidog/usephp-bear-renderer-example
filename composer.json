@@ -9,7 +9,7 @@
         "bear/resource": "^1.17",
         "bear/sunday": "^1.6",
         "koriym/env-json": "^1.0",
-        "polidog/usephp-bear-renderer": "dev-feat/tier3-hooks-snapshot@dev",
+        "polidog/usephp-bear-renderer": "dev-main@dev",
         "ray/aop": "^2.12",
         "ray/di": "^2.14"
     },

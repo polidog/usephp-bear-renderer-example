@@ -4,27 +4,53 @@ declare(strict_types=1);
 
 use Polidog\UsePhp\Html\H;
 use Polidog\UsePhp\Runtime\Element;
+use Polidog\UsePhp\Storage\StorageType;
+
+use function Polidog\UsePhp\Runtime\fc;
+use function Polidog\UsePhp\Runtime\useState;
 
 return function (array $props): Element {
-    $count = (int) ($props['count'] ?? 0);
-    $label = (string) ($props['label'] ?? 'Counter');
+    $next = (int) ($props['next'] ?? 0);
+    $prev = (int) ($props['prev'] ?? 0);
+    $reset = (int) ($props['reset'] ?? 0);
+    $initial = (int) ($props['count'] ?? 0);
 
     $bodyStyle = 'font-family: system-ui, sans-serif; max-width: 720px; margin: 50px auto; padding: 20px; background: #f5f5f5;';
     $cardStyle = 'background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);';
     $countStyle = 'font-size: 64px; font-weight: bold; text-align: center; color: #4a90e2; margin: 24px 0;';
+    $controlsStyle = 'display: flex; gap: 12px; justify-content: center; margin: 16px 0;';
+    $btnStyle = 'min-width: 64px; padding: 10px 18px; border-radius: 8px; background: #4a90e2; color: white; font-weight: bold; border: 0; cursor: pointer;';
+    $btnSecondaryStyle = 'min-width: 64px; padding: 10px 18px; border-radius: 8px; background: #888; color: white; font-weight: bold; border: 0; cursor: pointer;';
+
+    $widget = fc(function (array $p) use ($countStyle, $controlsStyle, $btnStyle, $btnSecondaryStyle): Element {
+        [$count, $setCount] = useState((int) ($p['count'] ?? 0));
+        $next = (int) ($p['next'] ?? ($count + 1));
+        $prev = (int) ($p['prev'] ?? ($count - 1));
+        $reset = (int) ($p['reset'] ?? 0);
+
+        return <div>
+            <div style={$countStyle}>{(string) $count}</div>
+            <div style={$controlsStyle}>
+                <button style={$btnStyle} onClick={fn() => $setCount($prev)}>-1</button>
+                <button style={$btnSecondaryStyle} onClick={fn() => $setCount($reset)}>reset</button>
+                <button style={$btnStyle} onClick={fn() => $setCount($next)}>+1</button>
+            </div>
+        </div>;
+    }, 'counter', StorageType::Snapshot);
 
     return <html>
         <head>
-            <title>{$label}</title>
+            <title>Counter</title>
         </head>
         <body style={$bodyStyle}>
             <div style={$cardStyle}>
-                <h1>{$label}</h1>
-                <p>Resource: <code>MyApp\Resource\Page\Counter</code></p>
-                <p>Template (FQCN convention): <code>templates/Page/Counter.psx</code></p>
-                <div style={$countStyle}>{(string) $count}</div>
+                <h1>Counter</h1>
+                <p>Resource: <code>MyApp\Resource\Page\Counter</code> (state held by useState + Snapshot)</p>
+                <p>Increment logic: <code>app://self/counter</code> (BEAR API resource)</p>
+                {$widget($props)}
                 <p><a href="/">&lt;- back</a></p>
             </div>
+            <script src="/usephp.js"></script>
         </body>
     </html>;
 };

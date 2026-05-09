@@ -1,0 +1,35 @@
+<?php
+
+declare(strict_types=1);
+
+use Polidog\UsePhp\Html\H;
+use Polidog\UsePhp\Runtime\Element;
+
+return function (array $props): Element {
+    $package = (string) ($props['package'] ?? '');
+    $packageUrl = (string) ($props['package_url'] ?? '');
+    $usephpUrl = (string) ($props['usephp_url'] ?? '');
+
+    $bodyStyle = 'font-family: system-ui, sans-serif; max-width: 720px; margin: 50px auto; padding: 20px; background: #f5f5f5;';
+    $cardStyle = 'background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);';
+    $linkStyle = 'color: #4a90e2;';
+
+    return <html>
+        <head>
+            <title>About</title>
+        </head>
+        <body style={$bodyStyle}>
+            <div style={$cardStyle}>
+                <h1>About</h1>
+                <p>This page is rendered by <code>{$package}</code>.</p>
+                <p>The resource declares a Template attribute pointing at <code>shared/About.psx</code>, so this template lives outside the convention-mapped <code>templates/Page/</code> directory.</p>
+                <h2>Links</h2>
+                <ul>
+                    <li><a href={$packageUrl} style={$linkStyle}>{$package}</a></li>
+                    <li><a href={$usephpUrl} style={$linkStyle}>polidog/use-php</a> (PSX compiler / H::xxx runtime)</li>
+                </ul>
+                <p><a href="/" style={$linkStyle}>&lt;- back</a></p>
+            </div>
+        </body>
+    </html>;
+};

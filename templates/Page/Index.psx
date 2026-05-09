@@ -1,0 +1,30 @@
+<?php
+
+declare(strict_types=1);
+
+use Polidog\UsePhp\Html\H;
+use Polidog\UsePhp\Runtime\Element;
+
+return function (array $props): Element {
+    $greeting = (string) ($props['greeting'] ?? 'Hello');
+
+    $bodyStyle = 'font-family: system-ui, sans-serif; max-width: 720px; margin: 50px auto; padding: 20px; background: #f5f5f5;';
+    $cardStyle = 'background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); margin-bottom: 16px;';
+    $linkStyle = 'color: #4a90e2;';
+
+    return <html>
+        <head>
+            <title>usephp-bear-renderer example</title>
+        </head>
+        <body style={$bodyStyle}>
+            <div style={$cardStyle}>
+                <h1>{$greeting}</h1>
+                <p>This page was rendered by <code>polidog/usephp-bear-renderer</code> from a <code>.psx</code> template inside a real BEAR.Sunday app.</p>
+                <ul>
+                    <li><a href="/counter?initial=10" style={$linkStyle}>/counter</a> — convention-based template (FQCN → templates/Page/Counter.psx)</li>
+                    <li><a href="/about" style={$linkStyle}>/about</a> — uses <code>#[Template]</code> attribute to point at templates/shared/About.psx</li>
+                </ul>
+            </div>
+        </body>
+    </html>;
+};

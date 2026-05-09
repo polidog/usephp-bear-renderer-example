@@ -1,0 +1,24 @@
+/vendor/
+.phpunit.cache/
+.phpunit.result.cache
+.php-cs-fixer.cache
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# DI + PSX caches
+var/tmp/*
+!var/tmp/.gitkeep
+
+# Per-user env
+env.json
+composer.lock
+
+# bamarni/composer-bin per-tool vendors
+vendor-bin/*/vendor/
+vendor-bin/*/composer.lock
+
+# Runtime logs
+var/log/*
+!var/log/.gitkeep

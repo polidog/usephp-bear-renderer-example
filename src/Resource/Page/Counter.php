@@ -6,7 +6,7 @@ namespace MyApp\Resource\Page;
 
 use BEAR\Resource\ResourceObject;
 use BEAR\Sunday\Inject\ResourceInject;
-use Polidog\UsephpBearRenderer\UsePhpActionResponder;
+use Polidog\UsePhpBearModule\UsePhpActionResponder;
 
 /**
  * GET  /counter?count=42  — initial render with snapshot-backed useState.

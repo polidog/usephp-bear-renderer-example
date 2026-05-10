@@ -14,12 +14,12 @@ return function (array $props): Element {
 
     return <html>
         <head>
-            <title>usephp-bear-renderer example</title>
+            <title>usephp-bear-module example</title>
         </head>
         <body style={$bodyStyle}>
             <div style={$cardStyle}>
                 <h1>{$greeting}</h1>
-                <p>This page was rendered by <code>polidog/usephp-bear-renderer</code> from a <code>.psx</code> template inside a real BEAR.Sunday app.</p>
+                <p>This page was rendered by <code>polidog/usephp-bear-module</code> from a <code>.psx</code> template inside a real BEAR.Sunday app.</p>
                 <ul>
                     <li><a href="/counter?count=10" style={$linkStyle}>/counter</a> — convention-based template (FQCN → templates/Page/Counter.psx)</li>
                     <li><a href="/about" style={$linkStyle}>/about</a> — uses <code>#[Template]</code> attribute to point at templates/shared/About.psx</li>

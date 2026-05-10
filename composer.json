@@ -9,7 +9,7 @@
         "bear/resource": "^1.17",
         "bear/sunday": "^1.6",
         "koriym/env-json": "^1.0",
-        "polidog/usephp-bear-renderer": "dev-main@dev",
+        "polidog/usephp-bear-module": "dev-main@dev",
         "ray/aop": "^2.12",
         "ray/di": "^2.14"
     },
@@ -114,8 +114,8 @@
         "type": "vcs",
         "url": "https://github.com/polidog/usePHP.git"
     },{
-        "name": "usephp-bear-renderer",
+        "name": "usephp-bear-module",
         "type": "vcs",
-        "url": "https://github.com/polidog/usephp-bear-renderer.git"
+        "url": "https://github.com/polidog/usephp-bear-module.git"
     }]
 }

@@ -1,8 +1,8 @@
-# usephp-bear-renderer-example
+# usephp-bear-module-example
 
 English / [日本語](README.ja.md)
 
-A working BEAR.Sunday application demonstrating [polidog/usephp-bear-renderer](https://github.com/polidog/usephp-bear-renderer) — the `RenderInterface` adapter that renders PSX (TSX-like) templates from [polidog/use-php](https://github.com/polidog/usePHP).
+A working BEAR.Sunday application demonstrating [polidog/usephp-bear-module](https://github.com/polidog/usephp-bear-module) — the `RenderInterface` adapter that renders PSX (TSX-like) templates from [polidog/use-php](https://github.com/polidog/usePHP).
 
 ```
 GET /                  →  Hello BEAR.Sunday  (templates/Page/Index.psx via FQCN convention)

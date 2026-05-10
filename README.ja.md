@@ -1,8 +1,8 @@
-# usephp-bear-renderer-example
+# usephp-bear-module-example
 
 [English](README.md) / 日本語
 
-[polidog/usephp-bear-renderer](https://github.com/polidog/usephp-bear-renderer) を使った動く BEAR.Sunday アプリケーションのサンプルです。`usephp-bear-renderer` は BEAR の `RenderInterface` 実装で、[polidog/use-php](https://github.com/polidog/usePHP) の PSX(TSX 風)テンプレートでリソースをレンダリングします。
+[polidog/usephp-bear-module](https://github.com/polidog/usephp-bear-module) を使った動く BEAR.Sunday アプリケーションのサンプルです。`usephp-bear-module` は BEAR の `RenderInterface` 実装で、[polidog/use-php](https://github.com/polidog/usePHP) の PSX(TSX 風)テンプレートでリソースをレンダリングします。
 
 ```
 GET /                  →  Hello BEAR.Sunday  (templates/Page/Index.psx を FQCN 規約で解決)
@@ -90,7 +90,7 @@ HttpResponder が echo
 ## 関連リポジトリ
 
 - [polidog/usePHP](https://github.com/polidog/usePHP) — PSX コンパイラと `H::xxx()` ランタイム
-- [polidog/usephp-bear-renderer](https://github.com/polidog/usephp-bear-renderer) — このサンプルが使っている BEAR 用アダプタ
+- [polidog/usephp-bear-module](https://github.com/polidog/usephp-bear-module) — このサンプルが使っている BEAR 用アダプタ
 
 ## ライセンス
 

@@ -7,8 +7,8 @@ use BEAR\Package\PackageModule;
 use BEAR\Resource\RenderInterface;
 use Koriym\EnvJson\EnvJson;
 use Polidog\UsePhp\UsePHP;
-use Polidog\UsephpBearRenderer\UsePhpActionResponder;
-use Polidog\UsephpBearRenderer\UsePhpRenderer;
+use Polidog\UsePhpBearModule\UsePhpActionResponder;
+use Polidog\UsePhpBearModule\UsePhpRenderer;
 use function dirname;
 
 final class AppModule extends AbstractAppModule
